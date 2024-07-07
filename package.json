@@ -3,6 +3,8 @@
     "start": "nodemon index.js"
   },
   "dependencies": {
+    "fs": "^0.0.1-security",
+    "https": "^1.0.0",
     "nodemon": "^2.0.22",
     "socket.io": "^4.7.5",
     "socket.io-client": "^4.7.5"
