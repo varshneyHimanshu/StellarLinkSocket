@@ -1,17 +1,4 @@
-const fs = require('fs');
-const https = require('https');
-const socketIo = require('socket.io');
-const express = require('express');
-
-const app = express();
-
-// Load SSL certificate and key
-const server = https.createServer({
-  key: fs.readFileSync('/path/to/your/privkey.pem'),
-  cert: fs.readFileSync('/path/to/your/fullchain.pem')
-}, app);
-
-const io = socketIo(8800, {
+const io = require("socket.io")(8800, {
   cors: {
     origin: "https://stelink.vercel.app",
   },
@@ -49,8 +36,4 @@ io.on("connection", (socket) => {
       io.to(user.socketId).emit("recieve-message", data);
     }
   });
-});
-
-server.listen(8800, () => {
-  console.log('Listening on port 8800');
 });
