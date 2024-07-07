@@ -1,6 +1,6 @@
 const io = require("socket.io")(8800, {
   cors: {
-    origin: "//stelink.vercel.app",
+    origin: "ws://stelink.vercel.app",
   },
 });
 
