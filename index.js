@@ -11,7 +11,7 @@ const server = https.createServer({
   cert: fs.readFileSync('/path/to/your/fullchain.pem')
 }, app);
 
-const io = socketIo(server, {
+const io = socketIo(8800, {
   cors: {
     origin: "https://stelink.vercel.app",
   },
